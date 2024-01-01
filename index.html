@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(10, 30px);
+      grid-gap: 1px;
+      border: 1px solid #333;
+    }
+
+    .tetromino {
+      background-color: #333;
+    }
+  </style>
+  <title>Tetris</title>
+</head>
+<body>
+  <div id="game-board"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('game-board');
+      let squares = Array.from({ length: 200 }, () => document.createElement('div'));
+
+      let currentPosition = 4;
+
+      // Tetrominoes
+      const lTetromino = [
+        [1, 11, 21, 22],
+        [2, 10, 11, 12],
+        [0, 1, 11, 21],
+        [1, 9, 10, 11]
+      ];
+
+      let currentTetromino = lTetromino[0];
+
+      function draw() {
+        currentTetromino.forEach((index) => {
+          squares[currentPosition + index].classList.add('tetromino');
+        });
+      }
+
+      function undraw() {
+        currentTetromino.forEach((index) => {
+          squares[currentPosition + index].classList.remove('tetromino');
+        });
+      }
+
+      draw();
+
+      // Move tetromino
+      function move() {
+        undraw();
+        currentPosition += 10;
+        draw();
+      }
+
+      // Control functions
+      function control(e) {
+        if (e.keyCode === 37) {
+          // Move left
+          undraw();
+          const isAtLeftEdge = currentTetromino.some(index => (currentPosition + index) % 10 === 0);
+          if (!isAtLeftEdge) currentPosition -= 1;
+          draw();
+        } else if (e.keyCode === 39) {
+          // Move right
+          undraw();
+          const isAtRightEdge = currentTetromino.some(index => (currentPosition + index) % 10 === 9);
+          if (!isAtRightEdge) currentPosition += 1;
+          draw();
+        } else if (e.keyCode === 40) {
+          // Move down
+          move();
+        }
+      }
+
+      // Event listeners
+      document.addEventListener('keydown', control);
+    });
+  </script>
+</body>
+</html>
