@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卒業メッセージ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px; /* 下部のマージンを追加 */
+        }
+
+        .menu-item {
+            margin: 10px 0;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .text {
+            margin-top: 20px; /* 上部のマージンを追加 */
+        }
+    </style>
+</head>
+<body>
+    <img class="text" src="https://tamapiko.github.io/OKI.message/文字.svg" alt="卒業のメッセージ">
+    <div class="menu">
+        <div class="menu-item" onclick="openVideo('https://tamapiko.github.io/OKI.message/1.mp4')">再生</div>
+        <div class="menu-item" onclick="openVideo('https://tamapiko.github.io/OKI.message/chapter%20select.mp4')">チャプター選択</div>
+        <div class="menu-item" onclick="openVideo('https://tamapiko.github.io/OKI.message/bonus%20features.mp4')">ボーナス機能</div>
+    </div>
+    <script>
+        function openVideo(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
