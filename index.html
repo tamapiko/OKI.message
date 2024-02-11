@@ -27,12 +27,6 @@
             background-size: cover;
             cursor: pointer;
         }
-
-        @media screen and (orientation: landscape) {
-            body {
-                background-image: none; /* 横向きの場合は背景画像を非表示にする */
-            }
-        }
     </style>
 </head>
 <body>
@@ -45,18 +39,6 @@
             var videoURL = 'https://tamapiko.github.io/OKI.message/1.mp4';
             // 新しいウィンドウで動画を開く
             window.open(videoURL, '_blank');
-        });
-
-        // デバイスの向きを監視する
-        window.addEventListener('orientationchange', function () {
-            // デバイスの向きが変更された時の処理
-            if (window.orientation === 90 || window.orientation === -90) {
-                // 横向きの場合の処理
-                document.body.style.backgroundImage = 'none'; // 背景画像を非表示にする
-            } else {
-                // 縦向きの場合の処理
-                document.body.style.backgroundImage = "url('https://tamapiko.github.io/OKI.message/%E8%83%8C%E6%99%AF.svg')"; // 背景画像を表示する
-            }
         });
     </script>
 </body>
