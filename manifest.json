@@ -1,7 +1,7 @@
 {
-	"name": "Tamako pay",
-	"short_name": "Tamako pay",
-	"description": "Tamako pay",
+	"name": "木原 健太郎卒業メッセージ",
+	"short_name": "木原 健太郎卒業メッセージ",
+	"description": "木原 健太郎卒業メッセージ",
 	"start_url": "./index.html",
 	"display": "standalone",
 	"theme_color": "#12151a",
