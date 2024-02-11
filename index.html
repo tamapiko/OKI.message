@@ -20,7 +20,7 @@
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: flex-start; /* 上端に配置 */
             align-items: center;
             height: 100vh;
             overflow: hidden;
@@ -31,6 +31,9 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
+            width: 100%;
+            padding: 0 20px; /* 左右の余白を追加 */
+            box-sizing: border-box; /* ボックスモデルのサイズを調整 */
         }
 
         .button {
@@ -57,12 +60,12 @@
     </style>
 </head>
 <body>
+    <img src="https://tamapiko.github.io/OKI.message/文字.svg" alt="卒業のメッセージ"> <!-- テキストを上に移動 -->
     <div class="button-container">
         <div class="play-button button" id="playButton"></div>
         <div class="chapter-button button" id="chapterButton"></div>
         <div class="bonus-button button" id="bonusButton"></div>
     </div>
-    <img src="https://tamapiko.github.io/OKI.message/文字.svg" alt="卒業のメッセージ">
     <script>
         // 再生ボタンをクリックした際の処理
         document.getElementById('playButton').addEventListener('click', function() {
@@ -80,8 +83,10 @@
 
         // ボーナスボタンをクリックした際の処理
         document.getElementById('bonusButton').addEventListener('click', function() {
-            // ボーナスの処理を記述
-            alert('ボーナスが選択されました。');
+            // ボーナスの動画のURL
+            var bonusVideoURL = 'https://tamapiko.github.io/OKI.message/0.mp4';
+            // 新しいウィンドウで動画を開く
+            window.open(bonusVideoURL, '_blank');
         });
     </script>
 </body>
