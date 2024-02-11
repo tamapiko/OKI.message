@@ -19,24 +19,50 @@
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-end;
             align-items: center;
             height: 100vh;
             overflow: hidden;
         }
 
-        .play-button {
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
             width: 100px;
             height: 100px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .play-button {
             background-image: url('https://tamapiko.github.io/OKI.message/play.svg');
             background-size: cover;
-            cursor: pointer;
+        }
+
+        .chapter-button {
+            background-image: url('https://tamapiko.github.io/OKI.message/chapter%20select.svg');
+            background-size: cover;
+        }
+
+        .bonus-button {
+            background-image: url('https://tamapiko.github.io/OKI.message/bonus%20features.svg');
+            background-size: cover;
         }
     </style>
 </head>
 <body>
-    <div class="play-button" id="playButton"></div>
-
+    <div class="button-container">
+        <div class="play-button button" id="playButton"></div>
+        <div class="chapter-button button" id="chapterButton"></div>
+        <div class="bonus-button button" id="bonusButton"></div>
+    </div>
+    <img src="https://tamapiko.github.io/OKI.message/文字.svg" alt="卒業のメッセージ">
     <script>
         // 再生ボタンをクリックした際の処理
         document.getElementById('playButton').addEventListener('click', function() {
@@ -44,6 +70,18 @@
             var videoURL = 'https://tamapiko.github.io/OKI.message/1.mp4';
             // 新しいウィンドウで動画を開く
             window.open(videoURL, '_blank');
+        });
+
+        // チャプターボタンをクリックした際の処理
+        document.getElementById('chapterButton').addEventListener('click', function() {
+            // チャプターの処理を記述
+            alert('チャプターが選択されました。');
+        });
+
+        // ボーナスボタンをクリックした際の処理
+        document.getElementById('bonusButton').addEventListener('click', function() {
+            // ボーナスの処理を記述
+            alert('ボーナスが選択されました。');
         });
     </script>
 </body>
