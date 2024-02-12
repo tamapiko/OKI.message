@@ -32,8 +32,8 @@
             border: none; /* 枠線を削除 */
             background-size: contain; /* 画像をボタンに合わせる */
             background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
-            width: 100px; /* ボタンの幅を設定 */
-            height: 100px; /* ボタンの高さを設定 */
+            width: calc(100vh / 6); /* ボタンの幅を設定 */
+            height: calc(100vh / 6); /* ボタンの高さを設定 */
             cursor: pointer;
         }
 
@@ -42,7 +42,7 @@
         }
 
         .text {
-            margin-top: 20px; /* 上部のマージンを追加 */
+            margin: 20px 0; /* テキストの上下のマージンを追加 */
         }
     </style>
 </head>
