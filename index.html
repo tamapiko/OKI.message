@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>卒業メッセージ</title>
+  <title>卒業メッセージ</title>
   <style>
     body {
       color: #ffffff;
@@ -140,15 +140,19 @@
     .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
       background-color: #e25b27;
     }
-               </style>
-  <meta name="theme-color" content="#39a1e6">
+              </style>
+  <meta name="theme-color" content="#91afff">
   <meta name="description" content="卒業メッセージです。" />
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./appicon512.png">
-  <meta name="theme-color" content="#39a1e6"/>
+  <meta name="theme-color" content="#91afff
 </head>
-<body>/>
+<body>
   </style>
+  <meta name="theme-color" content="#91afff">
+  
+</head>
+<body>
   </style>
   <meta name="theme-color" content="#000000">
   
@@ -232,7 +236,7 @@
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@卒業メッセージ.sb3"));
+        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@卒業メッセージ.sb3"));
       } catch (error) {
         console.error(error);
       }
@@ -315,7 +319,7 @@
       await scaffolding.loadProject(projectData);
       setProgress(1);
       loadingScreen.hidden = true;
-      if (true) {
+      if (false) {
         scaffolding.start();
       } else {
         launchScreen.hidden = false;
