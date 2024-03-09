@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>卒業メッセージ</title>
+  <title>卒業メッセージ</title>
   <style>
     body {
       color: #ffffff;
@@ -140,7 +140,7 @@
     .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
       background-color: #e25b27;
     }
-             </style>
+               </style>
   <meta name="theme-color" content="#39a1e6">
   <meta name="description" content="卒業メッセージです。" />
   <link rel="manifest" href="./manifest.json">
@@ -148,6 +148,7 @@
   <meta name="theme-color" content="#39a1e6"/>
 </head>
 <body>/>
+  </style>
   </style>
   <meta name="theme-color" content="#000000">
   
@@ -169,7 +170,7 @@
     <noscript>Enable JavaScript</noscript>
     
     
-    
+    <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
   </div>
 
   <div id="error" class="screen" hidden>
@@ -208,7 +209,7 @@
       setProgress(0.1);
 
       const scaffolding = new Scaffolding.Scaffolding();
-      scaffolding.width = 203;
+      scaffolding.width = 480;
       scaffolding.height = 360;
       scaffolding.resizeMode = "preserve-ratio";
       scaffolding.editableLists = false;
@@ -231,7 +232,7 @@
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@卒業メッセージ.sb3"));
+        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@卒業メッセージ.sb3"));
       } catch (error) {
         console.error(error);
       }
@@ -259,7 +260,7 @@
         getSandboxMode: () => 'unsandboxed',
         canLoadExtensionFromProject: () => true
       });
-      for (const extension of ["data:application/javascript,class%20Extension%20%7B%0A%20%20%20%20constructor()%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E6%96%B0%E3%81%97%E3%81%84%E3%82%BF%E3%83%96%E3%82%92%E9%96%8B%E3%81%8F%0A%20%20%20%20openNewTab(url)%20%7B%0A%20%20%20%20%20%20%20%20window.open(url%2C%20'_blank')%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AB%E3%82%BF%E3%83%96%E3%82%92%E9%96%89%E3%81%98%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E4%BF%83%E3%81%99%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E8%A1%A8%E7%A4%BA%0A%20%20%20%20closeTabPrompt()%20%7B%0A%20%20%20%20%20%20%20%20return%20confirm(%22%E3%81%93%E3%81%AE%E3%82%BF%E3%83%96%E3%82%92%E9%96%89%E3%81%98%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F%22)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20getInfo()%20%7B%0A%20%20%20%20%20%20%20%20return%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E8%BF%94%E3%81%99%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aclass%20ExtensionBlocks%20%7B%0A%20%20%20%20constructor(runtime)%20%7B%0A%20%20%20%20%20%20%20%20this.runtime%20%3D%20runtime%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E5%AE%9A%E7%BE%A9%0A%20%20%20%20getInfo()%20%7B%0A%20%20%20%20%20%20%20%20return%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22id%22%3A%20%22extension%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22name%22%3A%20%22Extension%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22blocks%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22opcode%22%3A%20%22openNewTab%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22blockType%22%3A%20%22command%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22text%22%3A%20%22%E6%96%B0%E3%81%97%E3%81%84%E3%82%BF%E3%83%96%E3%82%92%E9%96%8B%E3%81%8F%3A%20URL%20%5BURL%5D%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22arguments%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22URL%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22type%22%3A%20%22string%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22opcode%22%3A%20%22closeTabPrompt%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22blockType%22%3A%20%22Boolean%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22text%22%3A%20%22%E3%81%93%E3%81%AE%E3%82%BF%E3%83%96%E3%82%92%E9%96%89%E3%81%98%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%95%E3%82%8C%E3%82%8B%E9%96%A2%E6%95%B0%0A%20%20%20%20openNewTab(args)%20%7B%0A%20%20%20%20%20%20%20%20let%20url%20%3D%20args.URL%3B%0A%20%20%20%20%20%20%20%20window.open(url%2C%20'_blank')%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20closeTabPrompt()%20%7B%0A%20%20%20%20%20%20%20%20let%20shouldClose%20%3D%20confirm(%22%E3%81%93%E3%81%AE%E3%82%BF%E3%83%96%E3%82%92%E9%96%89%E3%81%98%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F%22)%3B%0A%20%20%20%20%20%20%20%20return%20shouldClose%3B%0A%20%20%20%20%7D%0A%7D%0A%0AScratch.extensions.register(new%20Extension())%3B%0AScratch.extensions.register(new%20ExtensionBlocks())%3B%0A"]) {
+      for (const extension of ["data:application/javascript,class%20Extension%20%7B%0A%20%20%20%20constructor()%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E6%96%B0%E3%81%97%E3%81%84%E3%82%BF%E3%83%96%E3%82%92%E9%96%8B%E3%81%8F%0A%20%20%20%20openNewTab(url)%20%7B%0A%20%20%20%20%20%20%20%20window.open(url%2C%20'_blank')%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E7%8F%BE%E5%9C%A8%E3%81%AE%E3%82%BF%E3%83%96%E3%82%92%E9%96%89%E3%81%98%E3%82%8B%0A%20%20%20%20closeCurrentTab()%20%7B%0A%20%20%20%20%20%20%20%20window.close()%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E3%82%BF%E3%83%96%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%0A%20%20%20%20getTabTitle()%20%7B%0A%20%20%20%20%20%20%20%20return%20document.title%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20getInfo()%20%7B%0A%20%20%20%20%20%20%20%20return%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E8%BF%94%E3%81%99%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aclass%20ExtensionBlocks%20%7B%0A%20%20%20%20constructor(runtime)%20%7B%0A%20%20%20%20%20%20%20%20this.runtime%20%3D%20runtime%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E5%AE%9A%E7%BE%A9%0A%20%20%20%20getInfo()%20%7B%0A%20%20%20%20%20%20%20%20return%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22id%22%3A%20%22extension%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22name%22%3A%20%22Extension%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22blocks%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22opcode%22%3A%20%22openNewTab%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22blockType%22%3A%20%22command%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22text%22%3A%20%22open%20new%20tab%20with%20%5BURL%5D%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22arguments%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22URL%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22type%22%3A%20%22string%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22opcode%22%3A%20%22closeCurrentTab%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22blockType%22%3A%20%22command%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22text%22%3A%20%22close%20current%20tab%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22opcode%22%3A%20%22getTabTitle%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22blockType%22%3A%20%22reporter%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22text%22%3A%20%22get%20tab%20title%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%95%E3%82%8C%E3%82%8B%E9%96%A2%E6%95%B0%0A%20%20%20%20openNewTab(args)%20%7B%0A%20%20%20%20%20%20%20%20let%20url%20%3D%20args.URL%3B%0A%20%20%20%20%20%20%20%20window.open(url%2C%20'_blank')%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20closeCurrentTab()%20%7B%0A%20%20%20%20%20%20%20%20window.close()%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20getTabTitle()%20%7B%0A%20%20%20%20%20%20%20%20return%20document.title%3B%0A%20%20%20%20%7D%0A%7D%0A%0AScratch.extensions.register(new%20Extension())%3B%0AScratch.extensions.register(new%20ExtensionBlocks())%3B%0A"]) {
         vm.extensionManager.loadExtensionURL(extension);
       }
 
